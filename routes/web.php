@@ -16,26 +16,14 @@ Route::get('/', function () {
 });
 
 //Nueva ruta que retorna texto
-Route::get('/usuarios', function () {
-    return 'Usuarios';
-});
+Route::get('/usuarios', 'UserController@index');
 
 //Prueba de que las rutas tiene como prioridad su orden
-Route::get('/usuarios/nuevo', function () {
-    return "Creando usuario";
-});
+Route::get('/usuarios/nuevo', 'UserController@create');
 
 //Nueva ruta que obtiene variable númerica
-Route::get('/usuarios/{id}', function ($id) {
-    return "Mostrando detalle del usuario: {$id}";
-})->where('id','\d+');
+Route::get('/usuarios/{id}', 'UserController@show')
+     ->where('id','\d+');
 
-//Nueva ruta con variables opcionales
-Route::get('/saludo/{name}/{nickname?}', function ($name, $nickname = null) {
-  $name     = ucfirst($name);
-  $nickname = ucfirst($nickname);
-  if($nickname){
-    return "Bienvenido(a) {$name}, tu apodo es {$nickname}";
-  }
-  return "Bienvenido(a) {$name}";
-});
+//Nueva ruta con variables opcionales con controlador de una sola función
+Route::get('/saludo/{name}/{nickname?}', 'WelcomeUserController');

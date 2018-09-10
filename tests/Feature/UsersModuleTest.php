@@ -27,6 +27,8 @@ class UsersModuleTest extends TestCase
     /** @test */
     function loads_new_user_users_page()
     {
+       //withoutExceptionHandling Permite ver .log en consola
+        $this->withoutExceptionHandling();
         $this->get('/usuarios/nuevo')
              ->assertStatus(200)
              ->assertSee("Creando usuario");
