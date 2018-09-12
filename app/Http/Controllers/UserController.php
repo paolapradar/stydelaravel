@@ -20,32 +20,18 @@ class UserController extends Controller
         ];
       }
       $title = 'Listado de usuarios';
-    /*Pasar parametros a una vista. OPCIÓN 1:
-      return view('users', [
-        'users'  => $users,
-        'title'  => $title,
-      ]);
-      OPCIÓN 2:
-      return view('users')->with([
-        'users'  => $users,
-        'title'  => $title,
-      ]);
-      OPCIÓN 3:
-      return view('users')
-            ->with('users', $users)
-            ->with('title', $title);
-      OPCIÓN 4:
+    /*Pasar parametros a una vista.
       Array asociativo que toma el nombre variable y su valor,
       pero estas deben llamarse igual.
 
       PARA MOSTRAR PHP EN LA PÁGINA:
       dd(); es un var_dump más un die();
       dd(compact('users','title'));*/
-      return view('users', compact('users','title'));
+      return view('users.index', compact('users','title'));
     }
 
     public function show($id){
-      return "Mostrando detalle del usuario: {$id}";
+      return view('users.show', compact('id'));
     }
 
     public function create(){
