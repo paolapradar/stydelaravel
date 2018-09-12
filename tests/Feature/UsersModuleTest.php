@@ -9,16 +9,24 @@ use Illuminate\Foundation\Testing\RefreshDatabase;
 class UsersModuleTest extends TestCase
 {
     /** @test */
-    function loads_user_list_page()
+    function show_list()
     {
         $this->get('/usuarios')
              ->assertStatus(200)
-             ->assertSee('Usuarios')
+             ->assertSee('Listado de usuarios')
              ->assertSee('Max');
     }
 
     /** @test */
-    function loads_user_details_page()
+    function show_list_empty()
+    {
+      $this->get('/usuarios?empty')
+           ->assertStatus(200)
+           ->assertSee('No hay usuarios registrados.');
+    }
+
+    /** @test */
+    function load_page_detail()
     {
         $this->get('/usuarios/5')
              ->assertStatus(200)
@@ -26,7 +34,7 @@ class UsersModuleTest extends TestCase
     }
 
     /** @test */
-    function loads_new_user_users_page()
+    function loads_page_new()
     {
        //withoutExceptionHandling Permite ver .log en consola
         $this->withoutExceptionHandling();
