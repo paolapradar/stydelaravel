@@ -7,7 +7,7 @@ use Illuminate\Database\Migrations\Migration;
 class CreateUsersTable extends Migration
 {
     /**
-     * Run the migrations.
+     * Run the migrations. / Create table
      *
      * @return void
      */
@@ -25,7 +25,7 @@ class CreateUsersTable extends Migration
     }
 
     /**
-     * Reverse the migrations.
+     * Reverse the migrations. / Drop table
      *
      * @return void
      */
@@ -33,4 +33,14 @@ class CreateUsersTable extends Migration
     {
         Schema::dropIfExists('users');
     }
+
+    /*
+    php artisan para ver todos los comandos
+    Para ejecutar el sql de laravel desde consola
+    php artisan migrate ejecuta function up() de todas las migraciones que no esten insertadas en la tabla migration;
+    php artisan migrate:rollback ejecuta function down() de el último lote(batch) agregado en la tabla migration;
+    php artisan migrate:reset ejecuta function down() de todas las migraciones;
+    php artisan migrate:refresh ejecuta function down() y up() de todas las migraciones;
+    php artisan make:migration nombre_migración generar una nueva migración.
+    */
 }
