@@ -1,5 +1,6 @@
 <?php
-
+use App\Models\User;
+use App\Models\Profession;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
@@ -12,11 +13,12 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
-      DB::table('users')->insert([
+      //Insert desde modelos laravel
+      User::create([
         'name'           =>  'Paola',
         'email'          =>  'ejemplo@gmail.com',
         'password'       =>  bcrypt('1234'),
-        'profession_id'  =>  DB::table('professions')->whereTitle('Desarrollador back-end')->value('id');,
+        'profession_id'  =>  Profession::whereTitle('Desarrollador back-end')->value('id'),
       ]);
 
       /*
@@ -50,6 +52,8 @@ class UserSeeder extends Seeder
           Devuelve el valor de la consulta que se indica con método mágico
             $profession = DB::table('professions')->whereTitle('Desarrollador back-end')->value('id');
             $profession
+        Constructor de consulta sql desde modelos laravel
+            $profession = Profession::whereTitle('Desarrollador back-end')->value('id');
       */
 
     }

@@ -1,5 +1,5 @@
 <?php
-
+use App\Models\Profession; //ejemplo si se quiere alias App\Models\Profession as Profesion
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
@@ -12,13 +12,13 @@ class ProfessionSeeder extends Seeder
      */
     public function run()
     {
-      DB::table('professions')->insert([
+      Profession::create([
         'title' => 'Desarrollador front-end',
       ]);
-      DB::table('professions')->insert([
+      Profession::create([
         'title' => 'Desarrollador back-end',
       ]);
-      DB::table('professions')->insert([
+      Profession::create([
         'title' => 'Diseñador web',
       ]);
     }
