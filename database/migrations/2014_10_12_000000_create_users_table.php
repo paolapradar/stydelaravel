@@ -19,6 +19,7 @@ class CreateUsersTable extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->string('password');
+            $table->boolean('is_admin')->default(false);
             $table->rememberToken(); // no es una columna, es un metodo helper
             $table->timestamps(); //metodo helper crea dos columnas:
                                   //created_at y updated_at

@@ -12,4 +12,6 @@ class Profession extends Model
     Omitir campos de auditoria
       public $timestamps  = false;
     */
+    //Campos que permitidos para llenar desde una petición
+    protected $fillable = ['title'];
 }
