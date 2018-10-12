@@ -19,8 +19,15 @@ class UserSeeder extends Seeder
         'email'          =>  'ejemplo@gmail.com',
         'password'       =>  bcrypt('1234'),
         'profession_id'  =>  Profession::whereTitle('Desarrollador back-end')->value('id'),
+        'is_admin'       =>  true,
       ]);
 
+      User::create([
+        'name'           =>  'Max',
+        'email'          =>  'ejemplo2@gmail.com',
+        'password'       =>  bcrypt('1234'),
+        'profession_id'  =>  Profession::whereTitle('Desarrollador front-end')->value('id'),
+      ]);
       /*
       Constructor manual de consulta en sql
         Array

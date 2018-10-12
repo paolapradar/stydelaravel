@@ -1,4 +1,4 @@
-# --------------------------Usando Eloqunt ORM--------------------------
+# Usando Eloqunt ORM
 Aqui podrás introducir código php.
 **Nota:** Cuando se realiza un cambio en el código fuente se debe salir e iniciar nuevamente el tinker.
 
@@ -14,7 +14,7 @@ Aqui podrás introducir código php.
 ## Obtener primer fila
     $professions->first();
 ## Obtener ultima fila
-    $professions->lasst();
+    $professions->last();
 ## Obtener una fila aleatoria
     $professions->random();
     $professions->random(1);
@@ -28,8 +28,10 @@ Aqui podrás introducir código php.
 ### Por id
     $users = App\Models\User::find(1);
 ### Crear y modificar un registro (fila)
-    user->save();
+    $user->save();
 ### Eliminar un registro (fila)
-    user->delete();
+    $user->delete();
 ### Validar la existencia de un registro (fila)
-    user->exists;
+    $user->exists;
+### Recarga información (limpia caché)
+    $user->refresh();

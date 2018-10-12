@@ -14,4 +14,9 @@ class Profession extends Model
     */
     //Campos que permitidos para llenar desde una petición
     protected $fillable = ['title'];
+
+    //Busca los usuarios a quien le pertenece la relacion
+    public function users(){
+      return $this->hasMany(User::class);
+    }
 }
