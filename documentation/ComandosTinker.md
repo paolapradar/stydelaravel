@@ -1,5 +1,5 @@
 # Comandos usando Eloqunt ORM
-Aqui podrás introducir código php.
+Aqui podrás introducir código php.  
 **Nota:** Cuando se realiza un cambio en el código fuente se debe salir e iniciar nuevamente el tinker.
 
 ## Iniciar

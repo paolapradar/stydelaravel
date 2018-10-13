@@ -12,14 +12,14 @@ Los archivos migrations permiten manejar la estructura de la Base de Datos.
 ## Sql de laravel desde consola
 
 ### Ejecutar Function up()
-De todas las migraciones que no esten insertadas en la tabla migration.
+De todas las migraciones que no esten insertadas en la tabla migration.  
     php artisan migrate
 
 ### Ejecutar Function down()
-Del último lote(batch) agregado en la tabla migration.
+Del último lote(batch) agregado en la tabla migration.  
     php artisan migrate:rollback
 
-De todas las migraciones.
+De todas las migraciones.  
     php artisan migrate:reset
 
 ### Eliminar todas las tablas y ejecutar todas las migraciones.
