@@ -33,9 +33,5 @@ class DatabaseSeeder extends Seeder
       }
       DB::statement('SET FOREIGN_KEY_CHECKS = 1;'); //Activa revisión de claves foráneas
     }
-    Comandos en consola:
-    php artisan make:seeder NombretablaSeeder crea Seeder
-    php artisan db:seed para ejecuta
-    php artisan migrate:fresh --seed ejecuta todas las migraciones y después los seeder
     */
 }
